@@ -22,14 +22,4 @@ By default, airgeddon copies the channel of the target network to set up the Evi
 
 ## ⚙️ Installation
 
-You can easily download the plugin into your local airgeddon plugins directory. Open a terminal and run the following commands:
-
-```bash
-# 1. Create the airgeddon plugins directory (if it doesn't exist)
-mkdir -p ~/.airgeddon/plugins
-
-# 2. Download the plugin directly from GitHub
-wget -O ~/.airgeddon/plugins/custom_et_control.sh https://raw.githubusercontent.com/Nuseo1/airgeddon-custom-et-control/main/plugins/custom_et_control.sh
-
-# 3. Make the script executable
-chmod +x ~/.airgeddon/plugins/custom_et_control.sh
+Simply put the .sh file in airgeddon's plugins folder.
