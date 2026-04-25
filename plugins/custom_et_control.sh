@@ -85,15 +85,17 @@ function _custom_et_interactive_prompt() {
 
     case "${essid_choice}" in
         1)
-            custom_et_chosen_essid="${essid}"
-            echo -e "${green_color}${custom_et_strings[${language},text_19]} \"${custom_et_chosen_essid}\"${normal_color}"
+            # Hängt das unsichtbare Leerzeichen an die originale ESSID an
+            custom_et_chosen_essid=$(echo -e "${essid}\xE2\x80\x8B")
+            echo -e "${green_color}${custom_et_strings[${language},text_19]} \"${essid}\" (mit Zero-Width Space)${normal_color}"
             ;;
         2)
             echo -e "${green_color}${custom_et_strings[${language},text_20]}${normal_color}"
             read -rp "> " custom_essid
             if [[ -n "${custom_essid}" ]]; then
-                custom_et_chosen_essid="${custom_essid}"
-                echo -e "${green_color}${custom_et_strings[${language},text_21]} \"${custom_et_chosen_essid}\"${normal_color}"
+                # Hängt das unsichtbare Leerzeichen an die selbst eingetippte ESSID an
+                custom_et_chosen_essid=$(echo -e "${custom_essid}\xE2\x80\x8B")
+                echo -e "${green_color}${custom_et_strings[${language},text_21]} \"${custom_essid}\" (mit Zero-Width Space)${normal_color}"
             else
                 echo -e "${yellow_color}${custom_et_strings[${language},text_22]}${normal_color}"
             fi
